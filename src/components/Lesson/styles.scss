@@ -1,0 +1,27 @@
+.card {
+	@apply rounded border border-gray-500 p-4 mt-2 group-hover:border-green-500;
+}
+
+.card__header {
+	@apply flex items-center justify-between;
+}
+
+.card__availability {
+	@apply text-sm font-medium flex items-center gap-2;
+
+	&--available {
+		@apply text-blue-500;
+	}
+
+	&--soon {
+		@apply text-orange-500;
+	}
+}
+
+.card__type {
+	@apply text-xs rounded py-[0.125rem] px-2 text-white border border-green-300 font-bold;
+}
+
+.card__title {
+	@apply text-gray-200 mt-5 block;
+}
