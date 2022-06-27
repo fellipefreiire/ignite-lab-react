@@ -1,9 +1,10 @@
 import { CheckCircle, Lock } from 'phosphor-react'
 import { isPast, format } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
-import './styles.scss'
 import { Link, useParams } from 'react-router-dom'
 import classnames from 'classnames'
+
+import styles from './styles.module.css'
 
 interface LessonProps {
   title: string
@@ -34,38 +35,47 @@ export function Lesson({
         {availableDateFormatted}
       </span>
 
-      <div className={classnames('card', {
+      <div className={classnames(styles.card, {
         'bg-green-500': isActiveLesson
       })}>
-        <header className="card__header">
+        <header className={styles.card__header}>
           {isLessonAvailable ? (
-            <span className={
-              classnames('card__availability card__availability--available', {
-                'text-white': isActiveLesson
-              })}>
+            <span
+              className={classnames(`${styles.card__availability}`, {
+                'text-white': isActiveLesson,
+                'text-blue-500': !isActiveLesson
+              })}
+            >
               <CheckCircle size={20} />
               Conteúdo Liberado
             </span>
           ) : (
-            <span className='card__availability card__availability--soon'>
+            // <span className='card__availability card__availability--soon'>
+            <span
+              className={`${styles.card__availability} ${styles['card__availability--soon']}`}
+            >
               <Lock size={20} />
               Em breve
             </span>
           )}
 
-          <span className={classnames('card__type', {
-            'border-white': isActiveLesson
+          <span className={classnames(styles.card__type, {
+            'border-white': isActiveLesson,
+            'border-green-300': !isActiveLesson
           })}>
             {type === 'live' ? 'AO VIVO' : 'AULA PRÁTICA'}
           </span>
         </header>
 
-        <strong className={classnames('card__title', {
-          'text-white': isActiveLesson
-        })}>
+        <strong
+          className={classnames(styles.card__title, {
+            'text-white': isActiveLesson,
+            'text-gray-200': !isActiveLesson
+          })}
+        >
           {title}
         </strong>
       </div>
-    </Link>
+    </Link >
   )
 }

@@ -1,9 +1,9 @@
 import { Logo } from "../Logo";
-import './styles.scss'
+import styles from './styles.module.css'
 
 export function Header() {
   return (
-    <header className="header">
+    <header className={styles.header}>
       <Logo />
     </header>
   )

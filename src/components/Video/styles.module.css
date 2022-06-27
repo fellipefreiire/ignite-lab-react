@@ -1,0 +1,83 @@
+.video-wrapper {
+	@apply bg-black flex justify-center;
+
+	&__player-wrapper {
+		@apply h-full w-full max-w-[1100px] max-h-[60vh] aspect-video;
+	}
+}
+
+.content-wrapper {
+	@apply p-8 max-w-[1100px] mx-auto;
+}
+
+.lesson-info {
+	@apply flex-1;
+
+	&__title {
+		@apply text-2xl font-bold;
+	}
+
+	&__description {
+		@apply mt-4 text-gray-200 leading-relaxed;
+	}
+}
+
+.teacher-wrapper {
+	@apply flex items-center gap-4 mt-6;
+
+	&__avatar {
+		@apply h-16 w-16 rounded-full border-2 border-blue-500;
+	}
+
+	&__name {
+		@apply font-bold text-2xl block;
+	}
+
+	&__bio {
+		@apply text-gray-200 text-sm block;
+	}
+}
+
+.button {
+	@apply p-4 text-sm flex items-center rounded font-bold uppercase gap-2 justify-center transition-colors;
+
+	&--discord {
+		@apply bg-green-500 hover:bg-green-700;
+	}
+
+	&--challenge {
+		@apply border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-gray-900;
+	}
+}
+
+.card-wrapper {
+	@apply gap-8 mt-20 grid grid-cols-2;
+}
+
+.card {
+	@apply bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors;
+
+	&__left-img {
+		@apply bg-green-700 h-full p-6 flex items-center;
+	}
+
+	&__left {
+		@apply bg-green-700 h-full p-6 flex items-center;
+	}
+
+	&__content {
+		@apply py-6 leading-relaxed;
+	}
+
+	&__title {
+		@apply text-2xl;
+	}
+
+	&__text {
+		@apply text-sm text-gray-200 mt-2;
+	}
+
+	&__right-img {
+		@apply h-full p-6 flex items-center;
+	}
+}

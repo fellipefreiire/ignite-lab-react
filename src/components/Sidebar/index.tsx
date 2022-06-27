@@ -1,18 +1,18 @@
 import { useGetLessonsQuery } from "../../graphql/generated";
 import { Lesson } from "../Lesson";
 
-import './styles.scss'
+import styles from './styles.module.css'
 
 export function Sidebar() {
   const { data } = useGetLessonsQuery()
 
   return (
-    <aside className="sidebar">
-      <span className="sidebar__cronograma">
+    <aside className={styles.sidebar}>
+      <span className={styles.sidebar__cronograma}>
         Cronograma de aulas
       </span>
 
-      <div className="sidebar__lesson-wrapper">
+      <div className={styles['sidebar__lesson-wrapper']}>
         {data?.lessons.map(lesson => (
           <Lesson
             key={lesson.id}
